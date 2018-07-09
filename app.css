@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    background-color: #232323;
+    color: white; 
+    text-transform: uppercase;
+    font-family: "Monserrat", "Avenir";
+    font-weight: normal;
+  }
+  
+  h1 {
+    background-color: #acb5c4;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    background-color: #acb5c4;
+    margin: 0;
+    padding: 0 0 20px 0;
+    line-height: 1.1;
+  }
+  
+  span {
+    font-size: 30px;
+  }
+  
+  
+  img {
+    width: 3em;
+  }
+  
+  #degree {
+    color: #acb5c4;
+  }
+  
+  #degree:hover{
+    color: darkblue;
+  }
+  
+  .weatherContainer {
+    margin: 0 auto;
+    width: 400px;
+    height: 500px;
+    
+    
+  }
