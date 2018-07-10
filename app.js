@@ -6,6 +6,7 @@ $(document).ready(function() {
     var picture = "";
     var roundTemp = "";
     var cels = true;
+    var weatherContainer = document.querySelector('#weathercontainer');
   
   
     if (navigator.geolocation) {
@@ -19,18 +20,33 @@ $(document).ready(function() {
             "&lon=" +
             lon,
           function(data) {
+            var farh = data.main.temp * 1.8 + 32;
+            console.log(farh);
+            if (farh < 60){
+              $(".container").addClass("coldWeather");
+              $('body').addClass("coldWeather");
+            } else if (farh > 60 && farh < 80){
+              $(".container").addClass("goodWeather");
+              $('body').addClass("goodWeather");
+            } else if (farh > 80){
+              $(".container").addClass("hotWeather");
+              $('body').addClass("hotWeather");
+            }
             var rawJson = JSON.stringify(data);
             var json = JSON.parse(rawJson);
             console.log(json);
             roundTemp = data.main.temp;
             roundTemp = roundTemp.toPrecision(3);
             html = "<div><img src='" + data.weather[0].icon + "'></div>";
+            $("#weather-container").removeClass("hideThis");
+            $("#title").removeClass("hideThis");
+            $("#loading").addClass("hideThis");
             $("#weather").html(data.weather[0].description);
             $("#temperature").html(roundTemp);
             $("#icon").html(html);
             $("#city").html(data.name);
             $("#country").html(data.sys.country);
-            $("#degree").on("click", function(){
+            $(".americaThis").on("click", function(farh){
               if (cels) {
                 var farh = data.main.temp * 1.8 + 32;
                 farh = farh.toFixed(1);

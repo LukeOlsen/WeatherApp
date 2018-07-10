@@ -5,19 +5,21 @@
         <title>Weather App!</title>
     </head>
     <body>
-        <h1> What's Happening In Your Neck of the Woods</h1>
-            <h2>FreeCodeCamp Weather App</h2>
-                <div class="weatherContainer" id ="weather-container">
-                    <span id="temperature"></span><span>°</span><span id="degree">C</span>
-                    <br>
-                    <span id="weather"></span>
-                    <br>
-                    <span id="icon"></span>
-                    <br>
-                    <span id="city"></span><span>,</span>
-                    <span id="country"></span>
-                </div>
-            <p id='test'><p>
+        <div class="container">
+            <h1 id="title" class="hideThis"> What's Happening In Your Neck of the Woods</h1>
+            <h1 id="loading">Loading <span id="dot1" class="bounceAnimation"> . </span><span id="dot2" class="bounceAnimation"> . </span><span id="dot3" class="bounceAnimation">.</span></h1>
+                    <div class="weatherContainer hideThis" id ="weather-container">
+                        <span id="temperature"></span><span>°</span><span class="hideThis" id="degree">C</span>
+                        <br>
+                        <span id="weather"></span>
+                        <br>
+                        <span id="icon"></span>
+                        <br>
+                        <span id="city"></span><span>,</span>
+                        <span id="country"></span>
+                    </div>
+                    <button class="americaThis">I'm American.</button>
+                <p id='test'><p>
         </div>
         <script
         src="https://code.jquery.com/jquery-3.3.1.js"
